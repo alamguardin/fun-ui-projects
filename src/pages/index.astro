@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import HeroButton from '../components/HeroButton.astro';
+import Card from '../components/Card.astro';
+// Test Image
+import TestImage from '../assets/shots/test.jpg';
 ---
 
 <Layout title="Fun UI Projects">
@@ -16,6 +19,34 @@ import HeroButton from '../components/HeroButton.astro';
 		</div>
 		<div class="hero-gradient"></div>
 	</header>
+
+	<div class="container collection">
+		<Card 
+			title="Is awesome design project"
+			img={TestImage.src}
+			src="/404"
+		></Card>
+		<Card 
+			title="Is awesome design project"
+			img={TestImage.src}
+			src="/404"
+		></Card>
+		<Card 
+			title="Is awesome design project"
+			img={TestImage.src}
+			src="/404"
+		></Card>
+		<Card 
+			title="Is awesome design project"
+			img={TestImage.src}
+			src="/404"
+		></Card>
+		<Card 
+			title="Is awesome design project"
+			img={TestImage.src}
+			src="/404"
+		></Card>
+	</div>
 </Layout>
 
 <style>
@@ -75,5 +106,11 @@ import HeroButton from '../components/HeroButton.astro';
 		background: rgb(9,9,11);
 		background: radial-gradient(closest-side, rgba(9,9,11,0) 0%, rgba(9,9,11,1) 100%);
 		z-index: 0;
+	}
+
+	.collection {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 1.125rem;
 	}
 </style>
