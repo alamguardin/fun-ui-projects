@@ -109,8 +109,23 @@ import TestImage from '../assets/shots/test.jpg';
 	}
 
 	.collection {
+		margin-bottom: 3rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		gap: 1.125rem;
+	}
+
+	/* 768px styles */
+	@media screen and (max-width: 768px) {
+		:root {
+			font-size: 0.875rem;
+        }
+	}
+
+	/* 425px styles */
+	@media screen and (max-width: 425px) {
+		.hero-title {
+			font-size: calc(100% + 1.5rem);
+		}
 	}
 </style>
