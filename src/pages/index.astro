@@ -1,178 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro'
+import Navbar from '../components/Navbar.astro';
+import HeroButton from '../components/HeroButton.astro';
 ---
 
 <Layout title="Fun UI Projects">
-
-	<header class="navbar">
-		<nav class="navbar-container">
-			<div class="navbar-brand">
-				<a href="index.html" class="navbar-brand-text">Fun UI Projects</a>
+	<header class="hero">
+		<div class="hero-container">
+			<Navbar></Navbar>
+			<div class="hero-content">
+				<span class="hero-author">Created by <a href="https://github.com/alamguardin">@alamguardin</a></span>
+				<h1 class="hero-title"><span>Code snippets</span> for frontend developers and web designers</h1>
+				<HeroButton></HeroButton>
 			</div>
-			<div class="navbar-socials">
-				<a href="" class="navbar-icon">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>
-				</a>
-			</div>
-		</nav>
+		</div>
+		<div class="hero-gradient"></div>
 	</header>
-
-	<div class="hero">
-		<h1 class="hero-heading"><span>Collection</span> of UI elements for everyone</h1>
-		<a href="#collection" class="hero-button">
-			<span>Explore more</span>
-			<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_104_44)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M120 0H80V51.7157L43.4315 15.1472L15.1472 43.4314L51.7158 80H0V120H51.7157L15.1472 156.568L43.4315 184.853L80 148.284V200H120V148.284L156.569 184.853L184.853 156.569L148.284 120H200V80H148.284L184.853 43.4314L156.569 15.1471L120 51.7157V0Z" fill="url(#paint0_linear_104_44)"/> </g> <defs> <linearGradient id="paint0_linear_104_44" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse"> <stop stop-color="#09090b"/> <stop offset="1" stop-color="#09090b"/> </linearGradient> <clipPath id="clip0_104_44"> <rect width="200" height="200" fill="white"/> </clipPath> </defs> </svg>
-		</a>
-	</div>
-	
-	<main>
-		<section id="collection" class="collection">
-			<Card title="Item1" img="" src="Hello"></Card>
-			<Card title="Item2" img="" src="Hello"></Card>
-			<Card title="Item3" img="" src="Hello"></Card>
-			<Card title="Item4" img="" src="Hello"></Card>
-			<Card title="Item5" img="" src="Hello"></Card>
-			<Card title="Item6" img="" src="Hello"></Card>
-		</section>
-	</main>
 </Layout>
 
 <style>
-	a {
-		text-decoration: none;
-	}
-
-	.navbar {
-		max-width: 1140px;
-		width: 90%;
-		margin: 40px auto;
-	}
-
-	.navbar-container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.navbar-brand a {
-		font-size: 1.125rem;
-		font-weight: 500;
-		color: #fafafa;
-	}
-
-	.navbar-icon svg {
-		width: 1.5rem;
-		fill: #a3a3a3;
-		transition: .2s all ease;
-	}
-
-	.navbar-icon svg:hover {
-		fill: #fafafa;
-	}
-
 	.hero {
-		max-widthth: 1140px;
-		width: 90%;
-		height: calc(100vh - 12.5rem);
-		margin: auto;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		background-color: #09090b;
+		opacity: 1;
+		background-image:  linear-gradient(#18181b 1.3px, transparent 1.3px), linear-gradient(to right, #18181b 1.3px, #09090b 1.3px);
+		background-size: 26px 26px;
+	}
+
+	.hero-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100vh;
+		z-index: 1;
+	}
+
+	.hero-content {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 	}
 
-	.hero-heading {
-		font-size: 6rem;
+	.hero-author {
+		margin: 3.75rem 0 1rem 0;
+		font-size: 0.875rem;
+		color: var(--zinc-500);
+	}
+
+	.hero-author a {
+		color: var(--violet-400);
+	}
+
+	.hero-title {
+		max-width: 50rem;
+		font-size: 4rem;
+		color: var(--zinc-500);
 		text-align: center;
 		text-wrap: balance;
-		animation: expand 0.4s ease both;
-		animation-delay: .4s;
 	}
 
-	.hero-heading span {
-		background: #bef264;
-		color: #09090b;
+	.hero-title span {
+		color: var(--zinc-50);
 	}
 
-	@keyframes expand {
-		0% {
-			opacity: 0;
-			scale: 0.8;
-			transform: translateY(15px);
-		}
-
-		50% {
-			opacity: 0.5;
-		}
-
-		100% {
-			opacity: 1;
-			scale: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.hero-button {
-		margin-top: 2.375rem;
-		display: flex;
-		padding: 0.9375rem 1.25rem;
-		gap: 0.75rem;
-		align-items: center;
-		background: #bef264;
-		border-radius: 1.25rem;
-		font-size: 0.875rem;
-		color: #09090b;
-		font-weight: 600;
-		animation: slide .4s ease both;
-		animation-delay: .4s;
-		transition: .2s all ease;
-	}
-
-	@keyframes slide {
-		0% {
-			opacity: 0;
-			transform: translateX(-20px)
-		}
-
-		50% {
-			opacity: 0.5;
-		}
-
-		100% {
-			opacity: 1;
-			transform: translate(0);
-		}
-	}
-
-	.hero-button svg {
-		width: 1.5rem;
-		fill: #09090b !important;
-		animation: rotate-center 1s infinite;
-    	animation-delay: 1s;
-	}
-
-	.hero-button:hover {
-		background: #a3e635;
-		box-shadow: 0rem -0.3125rem 1.5rem 1rem rgba(163,230,53,0.1);
-	}
-
-	@keyframes rotate-center {
-		0% {
-			transform:rotate(0)
-		}
-		
-		100% {
-			transform:rotate(360deg)
-		}
-	}
-
-	.collection {
-		max-width: 1140px;
-		width: 90%;
-		margin: 6.25rem auto;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1rem;
+	.hero-gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100vh;
+		background: rgb(9,9,11);
+		background: radial-gradient(closest-side, rgba(9,9,11,0) 0%, rgba(9,9,11,1) 100%);
+		z-index: 0;
 	}
 </style>
