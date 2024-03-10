@@ -14,7 +14,7 @@ import TestImage from '../assets/shots/test.jpg';
 			<div class="hero-content">
 				<span class="hero-author">Created by <a href="https://github.com/alamguardin">@alamguardin</a></span>
 				<h1 class="hero-title"><span>Code snippets</span> for frontend developers and web designers</h1>
-				<HeroButton></HeroButton>
+				<HeroButton class:list={['cta']}></HeroButton>
 			</div>
 		</div>
 		<div class="hero-gradient"></div>
@@ -79,6 +79,7 @@ import TestImage from '../assets/shots/test.jpg';
 		margin: 3.75rem 0 1rem 0;
 		font-size: 0.875rem;
 		color: var(--zinc-500);
+		animation: slide-up .4s ease .6s 1 both;
 	}
 
 	.hero-author a {
@@ -91,6 +92,7 @@ import TestImage from '../assets/shots/test.jpg';
 		color: var(--zinc-500);
 		text-align: center;
 		text-wrap: balance;
+		animation: slide-up .4s ease .5s 1 both;
 	}
 
 	.hero-title span {
@@ -126,6 +128,23 @@ import TestImage from '../assets/shots/test.jpg';
 	@media screen and (max-width: 425px) {
 		.hero-title {
 			font-size: calc(100% + 1.5rem);
+		}
+	}
+
+	/* Reveal animations */
+	@keyframes slide-up {
+		0% {
+			transform: translateY(6.25rem);
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 0.5;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 </style>
