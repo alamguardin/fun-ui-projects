@@ -1,0 +1,41 @@
+<button class="code-button">
+    <span class="code-button-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12L15.9289 19.0711L14.5147 17.6569L20.1716 12L14.5147 6.34317L15.9289 4.92896L23 12ZM3.82843 12L9.48528 17.6569L8.07107 19.0711L1 12L8.07107 4.92896L9.48528 6.34317L3.82843 12Z"></path></svg>
+    </span>
+</button>
+
+<style>
+    .code-button {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        padding: 0.25rem;
+        background: rgb(139,92,246);
+        background: linear-gradient(-45deg, rgba(139,92,246,1) 0%, rgba(167,139,250,1) 100%);
+        border: 1px solid var(--violet-400);
+        border-radius: 2.5rem;
+        box-shadow: 0 0.125rem 0.9375rem 0.25rem rgba(167,139,250,0.2);
+        transition: .2s all ease;
+        cursor: pointer;
+    }
+
+    .code-button:hover {
+        background: linear-gradient(-45deg, rgba(139,92,246,1) 50%, rgba(167,139,250,1) 100%);
+        box-shadow: 0 0.125rem 1.25rem 0.5rem rgba(167,139,250,0.3);
+    }
+
+    .code-button-circle {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        background: var(--zinc-50);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .code-button-circle svg {
+        width: 1.5rem;
+        fill: var(--zinc-950);
+    }
+</style>
