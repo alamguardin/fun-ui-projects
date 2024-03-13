@@ -45,6 +45,9 @@ const highlightedJs = hljs.highlight(
     <div class="popup-content" id="js">
         <pre><code>{highlightedJs}</code></pre>
     </div>
+    <button class="popup-close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+    </button>
 </div>
 
 <style>
@@ -106,6 +109,41 @@ const highlightedJs = hljs.highlight(
     .popup-content.active {
         display: block;
     }
+
+    .popup-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: none;
+        border: none;
+        padding: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .popup-close svg {
+        width: 1.5rem;
+        fill: var(--zinc-500);
+        transition: .2s all ease;
+    }
+
+    .popup-close:hover svg {
+        fill: var(--zinc-50);
+    }
+
+    /* 425px styles */
+    @media screen and (max-width: 425px) {
+        .popup-tabs {
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-right: 3rem;
+        }
+    }
+
 </style>
 
 <script>
