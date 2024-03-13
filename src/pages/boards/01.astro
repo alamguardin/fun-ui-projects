@@ -3,37 +3,30 @@ import BoardLayout from '../../layouts/BoardLayout.astro';
 ---
 
 <BoardLayout title="Test">
-    <!-- <div class="code">
-        <pre class="code-pre"><code class="code-content" style="font-size: 14px;"></code></pre>
-    </div> -->
+    <div>
+        <button>Hello</button>
+    </div>
 </BoardLayout>
 
-<script>
-    // const codeTest = 
-    // `
-    // const = "Hello world"
 
-    // function Check(text) {
-    //     if (text) {
-    //         console.log(true)
-    //     } else {
-    //         console.log(false)
-    //     }
-    // }
-    // `
-    // // Using ES6 import syntax
-    // import hljs from 'highlight.js/lib/core';
-    // import javascript from 'highlight.js/lib/languages/javascript';
-    // import 'highlight.js/styles/tokyo-night-dark.css'
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        background: purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    // // Then register the languages you need
-    // hljs.registerLanguage('javascript', javascript);
-
-    // const highlightedCode = hljs.highlight(
-    //     codeTest,
-    //     { language: 'javascript' }
-    // ).value
-
-    // const codeFragment = document.querySelector('.code-content');
-    // if (codeFragment) codeFragment.innerHTML = highlightedCode
-</script>
+    button {
+        border: none;
+        outline: none;
+        font-weight: 500;
+        color: black;
+        background: white;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+    }
+</style>
