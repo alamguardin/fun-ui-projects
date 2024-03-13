@@ -17,6 +17,8 @@
         box-shadow: 0 0.125rem 0.9375rem 0.25rem rgba(167,139,250,0.2);
         transition: .2s all ease;
         cursor: pointer;
+        animation: slide-up .4s ease .5s 1 both;
+        z-index: 1;
     }
 
     .code-button:hover {
@@ -46,4 +48,21 @@
             right: 2rem;
         }
     }
+
+    /* Animations */
+    @keyframes slide-up {
+		0% {
+			transform: translateY(6.25rem);
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 0.5;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 </style>

@@ -76,13 +76,30 @@ const { title } = Astro.props;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        animation: slide-left .4s ease .5s 1 both;
     }
 
     .name {
         margin-bottom: 1rem;
         font-size: 0.875rem;
-        
+
     }
+
+    @keyframes slide-left {
+		0% {
+			transform: translateX(6.25rem);
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 0.5;
+		}
+
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
 </style>
 
 <script>

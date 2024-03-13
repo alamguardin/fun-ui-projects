@@ -16,6 +16,8 @@
         justify-content: center;
         align-items: center;
         transition: .2s all ease;
+        animation: slide-up .4s ease .5s 1 both;
+        z-index: 1;
     }
 
     .back-button:hover {
@@ -38,4 +40,21 @@
             left: 2rem;
         }
     }
+
+    /* Animations */
+    @keyframes slide-up {
+		0% {
+			transform: translateY(6.25rem);
+			opacity: 0;
+		}
+
+		50% {
+			opacity: 0.5;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 </style>
