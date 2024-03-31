@@ -1,8 +1,36 @@
 ---
 import BoardLayout from '../../layouts/BoardLayout.astro';
+
+const htmlCode = 
+`<div class="container">
+    <h1 class="title">Hello World</h1>
+</div>
+`;
+
+const cssCode = 
+`.container {
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+}
+
+.title {
+    font-size: 48px;
+    color: black;
+    text-aling: center;
+}
+`;
+
+const jsCode = 
+`const popupMessage = 'Hello this is my message'
+
+document.addEventListener('DOMContentLoad', () => {
+    alert(popupMessage)
+})
+`;
 ---
 
-<BoardLayout title="Test">
+<BoardLayout title="Test" html={htmlCode} css={cssCode} js={jsCode}>
     <div>
         <button>Hello</button>
     </div>

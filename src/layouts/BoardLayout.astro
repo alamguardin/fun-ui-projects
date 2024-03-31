@@ -4,10 +4,13 @@ import CodeButton from '../components/CodeButton.astro';
 import PopupCode from '../components/PopupCode.astro';
 
 interface Props {
-	title: string;
+	title: string,
+    html: string,
+    css: string,
+    js: string
 }
 
-const { title } = Astro.props;
+const { title, html, css, js } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +26,11 @@ const { title } = Astro.props;
 	<body>
         <BackButton></BackButton>
         <CodeButton></CodeButton>
-        <PopupCode></PopupCode>
+        <PopupCode 
+            htmlFragment={html}
+            cssFragment={css}
+            jsFragment={js}
+        ></PopupCode>
         <main>
             <span class="name">{title}</span>
             <slot />

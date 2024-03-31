@@ -1,4 +1,12 @@
 ---
+interface Props {
+    htmlFragment: string,
+    cssFragment: string,
+    jsFragment: string
+}
+
+const { htmlFragment, cssFragment, jsFragment } = Astro.props;
+
 import hljs from 'highlight.js/lib/core';
 import html from 'highlight.js/lib/languages/xml'
 import css from 'highlight.js/lib/languages/css'
@@ -9,9 +17,9 @@ hljs.registerLanguage('html', html);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('javascript', javascript);
 
-const htmlCode = "<span>Hello</span>";
-const cssCode = "h1 { color: red; }";
-const jsCode = "const myAge = 20";
+const htmlCode = htmlFragment ? htmlFragment : "<span>Hello</span>";
+const cssCode = cssFragment ? cssFragment : "h1 { color: red; }";
+const jsCode = jsFragment ? jsFragment : "const myAge = 20";
 
 const highlightedHtml = hljs.highlight(
     htmlCode,
