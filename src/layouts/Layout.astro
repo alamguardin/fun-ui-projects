@@ -66,4 +66,36 @@ const { title } = Astro.props;
         width: 90%;
         margin: auto;
     }
+
+    /* Scrollbar styles */
+    *::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+    }
+    *::-webkit-scrollbar-track {
+        border-radius: 5p;
+        background-color: #09090B;
+        border: 9px solid #09090B;
+    }
+
+    *::-webkit-scrollbar-track:hover {
+        background-color: #09090B;
+    }
+
+    *::-webkit-scrollbar-track:active {
+        background-color: #09090B;
+        }
+
+    *::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #27272A;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: #27272A;
+    }
+
+    *::-webkit-scrollbar-thumb:active {
+        background-color: #71717A;
+    }
 </style>
