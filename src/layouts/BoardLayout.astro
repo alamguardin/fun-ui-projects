@@ -100,17 +100,3 @@ const { title, link } = Astro.props;
 		}
 	}
 </style>
-
-<script>
-    const codeButton = document.querySelector('.code-button');
-    const popupCode = document.querySelector('.popup');
-    codeButton.addEventListener('click', () => {
-        popupCode.classList.toggle('active');
-    })
-
-
-    const btnPopupClose = document.querySelector('.popup-close');
-    btnPopupClose.addEventListener('click', () => {
-        popupCode.classList.remove('active')
-    })
-</script>
