@@ -1,0 +1,231 @@
+---
+import BoardLayout from '../../layouts/BoardLayout.astro';
+---
+
+<BoardLayout title="Feedback Bar" link="https://codesandbox.io/p/sandbox/feedback-bar-jpgfm3">
+    <div class="feedback">
+        <div class="feedback-control">
+            <input type="text" placeholder="How was your experience?" class="feedback-control-input">
+            <ul class="feedback-control-emojis">
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Thumbs%20Up.png" alt="Thumbs Up" width="25" height="25" />
+                </li>
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
+                </li>
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Hearts.png" alt="Smiling Face with Hearts" width="25" height="25" />
+                </li>
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Slightly%20Frowning%20Face.png" alt="Slightly Frowning Face" width="25" height="25" />
+                </li>
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Confused%20Face.png" alt="Confused Face" width="25" height="25" />
+                </li>
+                <li>
+                    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Angry%20Face.png" alt="Angry Face" width="25" height="25" />
+                </li>
+            </ul>
+            <button class="feedback-control-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+            </button>
+        </div>
+        <div class="feedback-emojis">
+            <label for="thumbs-up">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Thumbs%20Up.png" alt="Thumbs Up" width="25" height="25" />
+            </label>
+            <input type="radio" id="thumbs-up" name="emoji">
+            <label for="red-heart">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="25" height="25" />
+            </label>
+            <input type="radio" id="red-heart" name="emoji">
+            <label for="smiling-face-with-hearts">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Hearts.png" alt="Smiling Face with Hearts" width="25" height="25" />
+            </label>
+            <input type="radio" id="smiling-face-with-hearts" name="emoji">
+            <label for="slighty-frowning-face">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Slightly%20Frowning%20Face.png" alt="Slightly Frowning Face" width="25" height="25" />
+            </label>
+            <input type="radio" id="slighty-frowning-face" name="emoji">
+            <label for="confused-face">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Confused%20Face.png" alt="Confused Face" width="25" height="25" />
+            </label>
+            <input type="radio" id="confused-face" name="emoji">
+            <label for="angry-face">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Angry%20Face.png" alt="Angry Face" width="25" height="25" />
+            </label>
+            <input type="radio" id="angry-face" name="emoji">
+        </div>
+    </div>
+</BoardLayout>
+
+
+<style>
+    :root {
+        --bg-color: #09090B;
+        --text-color: #FAFAFA;
+        --bg-input: #18181B;
+        --border-input: #27272A;
+        --border-input-hover: #172554;
+        --border-input-focus: #3B82F6;
+    }
+    
+    .feedback {
+        width: max-content;
+        height: 3.25rem;
+        background: var(--bg-input);
+        padding: 0.5rem 1.125rem;
+        border: 2px solid var(--border-input);
+        border-radius: 28px;
+        transition: .2s all ease;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .feedback:hover {
+        border-color: var(--border-input-hover);
+    }
+    
+    .feedback:focus-within {
+        border-color: var(--border-input-focus);
+        height: 6rem;
+    }
+    
+    .feedback-control {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .feedback-control-input {
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--text-color);
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+    
+    .feedback-control-input::placeholder {
+        color: var(--text-color);
+    }
+    
+    .feedback-control-emojis {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.625rem;
+        z-index: 0;
+        transition: .2s all ease;
+    }
+    
+    .feedback-control-emojis::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        box-shadow: inset 0 0 0.5rem 0.125rem var(--bg-input);
+        z-index: 4;
+    }
+
+    .feedback:focus-within .feedback-control-emojis {
+        display: none;
+    }
+    
+    .feedback-control-emojis li {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        animation: emoji-slide 8s infinite alternate ease-out;
+    }
+
+    .feedback-control-emojis li img {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    @keyframes emoji-slide {
+        0% {
+            transform: translateY(0);
+        }
+    
+        20% {
+            transform: translateY(-2rem);
+        }
+    
+        40% {
+            transform: translateY(-4rem);
+        }
+    
+        60% {
+            transform: translateY(-6rem);
+        }
+    
+        80% {
+            transform: translateY(-8rem);
+        }
+    
+        100% {
+                transform: translateY(-10rem);
+        }
+    }
+    
+    .feedback-control-button {
+        width: 2rem;
+        height: 2rem;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        border-radius: 100%;
+        background: var(--text-color);
+        cursor: pointer;
+        transition: .2s all ease;
+    }
+
+    .feedback-control-button:active {
+        transform: scale(0.9);
+    }
+    
+    .feedback-control-button svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+    
+    .feedback:focus-within .feedback-control-button {
+        display: flex;
+    }
+    
+    .feedback-emojis {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .feedback-emojis label {
+        transition: .2s all ease;
+        cursor: pointer;
+    }
+
+    .feedback-emojis label:hover {
+        transform: scale(1.5) translateY(-0.3125rem);
+    }
+
+    .feedback-emojis label:hover + input + label {
+        transform: scale(1.2);
+    }
+
+    .feedback-emojis label:has(+ input + label:hover) {
+        transform: scale(1.2);
+    }
+    
+    .feedback-emojis input {
+        appearance: none;
+    }
+</style>
